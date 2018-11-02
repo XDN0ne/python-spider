@@ -1,13 +1,17 @@
-#!/usr/bin/python
-# coding:utf8
+#!/usr/bin/env python
+# -*- coding: utf-8 -*-
+# @Time    : 2018/11/02
+# @Author  : XDN01
+# @Site    : www.raosong.cc
+# @File    : searchfile-keywords.py
 import os
 
-def is_file_contain_word(file_list, query_word):
+def word_file(file_list, query_word): 
     for _file in file_list:
         if query_word in open(_file).read():
             print _file
     print("Finish searching.")
-
+    
 def get_all_file(floder_path):
     file_list = []
     if floder_path is None:
@@ -20,5 +24,5 @@ def get_all_file(floder_path):
 query_word = raw_input("Please input the key word that you want to search:")
 basedir = raw_input("Please input the directory:")
 
-is_file_contain_word(get_all_file(basedir), query_word)
+word_file(get_all_file(basedir), query_word)
 raw_input("Press Enter to quit.")
